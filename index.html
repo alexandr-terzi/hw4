@@ -8,23 +8,24 @@
 </head>
 <body>
     <script>
-        var i = 0;
-        var j = 0;
+        const height = +prompt('Введите число');
+        
+        let tree = '';
 
-        var max = +prompt('Введите число');
-        var space = "";
-        var star = "";
+        for (let lines = 0; lines <= height; lines++) {
+            
+            for (let space = 0; space < height - lines; space++) {
+                tree += ' ';
+            }
 
-        while (i < max) {
-        space = "";
-        star = "";
-        for (j = 0; j < max - i; j++) space += " ";
-        for (j = 0; j < 2 * i + 1; j++) star += "*";
-        console.log(space + star);
-        i++;
+            for (let star = 0; star < lines; star++) {
+                tree += '*';
+            }
+
+            tree += '\n';
         }
-        
-        
+
+        alert(tree); 
     </script>
 </body>
 </html>
